@@ -42,7 +42,7 @@ def save_countries_with_min_games(olympic_games, min_games):
 file_path = 'medals.csv'
 olympic_games = read_data(file_path)
 
-country = 'United States'
+country = 'Great Britain'
 total_medals = total_medals_by_country(olympic_games, country)
 print(f'Total medals for {country}: {total_medals}')
 
