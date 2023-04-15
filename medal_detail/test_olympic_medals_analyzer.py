@@ -1,7 +1,5 @@
 import unittest
-from io import StringIO
 from unittest.mock import patch
-import os
 
 # Assuming the functions are in a file called olympic_medals_analyzer.py
 from olympic_medals_analyzer import read_data, total_medals_by_country, highest_gold_medals, save_countries_with_min_games
