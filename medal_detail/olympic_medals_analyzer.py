@@ -3,8 +3,7 @@ def read_data(file_path):
     with open(file_path, 'r') as f:
         # Skip the header line
         f.readline()
-        lines = f.readlines()
-        for line in lines:
+        for line in f:
             # Remove the newline character at the end of the line and split by comma
             values = line.strip().split(',')
             # Convert numeric values to integers
@@ -14,21 +13,14 @@ def read_data(file_path):
 
 
 def total_medals_by_country(olympic_games, country):
-    total_medals = 0
     for entry in olympic_games:
         if entry[0] == country:
-            total_medals += entry[-1]
-    return total_medals
+            return entry[-1]
+    return 0
 
 
 def highest_gold_medals(olympic_games):
-    max_gold = 0
-    max_gold_country = None
-    for entry in olympic_games:
-        if entry[2] > max_gold:
-            max_gold = entry[2]
-            max_gold_country = entry[0]
-    return max_gold_country
+    return max(olympic_games, key=lambda x: x[2])[0]
 
 
 def save_countries_with_min_games(olympic_games, min_games):
