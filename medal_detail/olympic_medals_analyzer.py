@@ -1,4 +1,4 @@
-def read_data(file_path):
+def createListMedals(file_path):
     data = []
     with open(file_path, 'r') as f:
         # Skip the header line
@@ -32,7 +32,7 @@ def save_countries_with_min_games(olympic_games, min_games):
 
 # Example usage
 file_path = 'medals.csv'
-olympic_games = read_data(file_path)
+olympic_games = createListMedals(file_path)
 
 country = 'Great Britain'
 total_medals = total_medals_by_country(olympic_games, country)

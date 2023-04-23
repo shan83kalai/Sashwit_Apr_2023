@@ -1,7 +1,7 @@
 import tkinter as tk
 from tkinter import ttk
 
-from medal_detail.olympic_medals_analyzer import read_data
+from medal_detail.olympic_medals_analyzer import createListMedals
 
 
 def get_country_data(olympic_games, country):
@@ -48,5 +48,5 @@ def create_gui(olympic_games):
 
 if __name__ == "__main__":
     file_path = 'medals.csv'
-    olympic_games = read_data(file_path)
+    olympic_games = createListMedals(file_path)
     create_gui(olympic_games)

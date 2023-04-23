@@ -2,7 +2,7 @@ import unittest
 from unittest.mock import patch
 
 # Assuming the functions are in a file called olympic_medals_analyzer.py
-from olympic_medals_analyzer import read_data, total_medals_by_country, highest_gold_medals, save_countries_with_min_games
+from olympic_medals_analyzer import createListMedals, total_medals_by_country, highest_gold_medals, save_countries_with_min_games
 
 
 class TestOlympicMedalsAnalyzer(unittest.TestCase):
@@ -18,7 +18,7 @@ class TestOlympicMedalsAnalyzer(unittest.TestCase):
     def test_read_data(self):
         with patch("builtins.open", unittest.mock.mock_open(
                 read_data="Team,Summer Games,Gold,Silver,Bronze,TOTAL\nAfghanistan,14,0,0,2,2\nAlgeria,13,5,4,8,17\nArgentina,24,21,25,28,74\nArmenia,6,2,6,6,14\n")):
-            data = read_data("test.csv")
+            data = createListMedals("test.csv")
             self.assertEqual(data, self.sample_data)
 
     def test_total_medals_by_country(self):
